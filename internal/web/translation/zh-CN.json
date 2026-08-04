@@ -101,6 +101,7 @@
     "clients": "客户端",
     "groups": "分组",
     "nodes": "节点",
+    "servers": "服务器监控",
     "settings": "面板设置",
     "xray": "Xray 配置",
     "routing": "路由",

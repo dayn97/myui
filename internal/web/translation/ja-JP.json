@@ -101,6 +101,7 @@
     "clients": "クライアント",
     "groups": "グループ",
     "nodes": "ノード",
+    "servers": "サーバー監視",
     "settings": "パネル設定",
     "xray": "Xray 設定",
     "routing": "ルーティング",

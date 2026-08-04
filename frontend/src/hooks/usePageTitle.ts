@@ -7,6 +7,9 @@ const TITLE_KEYS: Record<string, string> = {
   '/inbounds': 'menu.inbounds',
   '/clients': 'menu.clients',
   '/groups': 'menu.groups',
+  '/servers': 'menu.servers',
+  // Keep descriptive titles for legacy bookmarks while their routes are hidden
+  // from navigation (nodes redirects to servers; hosts is intentionally absent).
   '/nodes': 'menu.nodes',
   '/hosts': 'menu.hosts',
   '/settings': 'menu.settings',

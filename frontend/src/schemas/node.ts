@@ -15,6 +15,8 @@ export const NodeRecordSchema = z.object({
   latencyMs: z.number().optional(),
   cpuPct: z.number().optional(),
   memPct: z.number().optional(),
+  netUp: z.number().optional(),
+  netDown: z.number().optional(),
   xrayVersion: z.string().optional(),
   panelVersion: z.string().optional(),
   uptimeSecs: z.number().optional(),

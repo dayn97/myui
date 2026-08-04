@@ -101,6 +101,7 @@
     "clients": "Clientes",
     "groups": "Grupos",
     "nodes": "Nodos",
+    "servers": "Monitor de servidores",
     "settings": "Ajustes del panel",
     "xray": "Configuración Xray",
     "routing": "Enrutamiento",

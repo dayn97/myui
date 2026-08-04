@@ -101,6 +101,7 @@
     "clients": "Clients",
     "groups": "Groups",
     "nodes": "Nodes",
+    "servers": "Server Monitor",
     "hosts": "Hosts",
     "settings": "Panel Settings",
     "xray": "Xray Configs",
