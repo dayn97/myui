@@ -256,7 +256,12 @@
       "healthCritical": "{list} — kritis",
       "panel": "Panel",
       "threads": "Thread",
-      "uptime": "Waktu aktif"
+      "uptime": "Waktu aktif",
+      "systemLoad": "Beban Sistem",
+      "resourceHub": "Pusat Sumber Daya",
+      "documentation": "Dokumentasi",
+      "repository": "Repositori",
+      "support": "Dukungan"
     },
     "inbounds": {
       "totalDownUp": "Total Terkirim/Diterima",

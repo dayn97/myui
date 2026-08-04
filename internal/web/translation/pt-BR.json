@@ -256,7 +256,12 @@
       "healthCritical": "{list} — crítico",
       "panel": "Painel",
       "threads": "Threads",
-      "uptime": "Tempo ativo"
+      "uptime": "Tempo ativo",
+      "systemLoad": "Carga do sistema",
+      "resourceHub": "Central de recursos",
+      "documentation": "Documentação",
+      "repository": "Repositório",
+      "support": "Suporte"
     },
     "inbounds": {
       "totalDownUp": "Total Enviado/Recebido",

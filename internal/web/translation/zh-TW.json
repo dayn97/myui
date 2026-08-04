@@ -256,7 +256,12 @@
       "healthCritical": "{list} — 危險",
       "panel": "面板",
       "threads": "執行緒",
-      "uptime": "執行時間"
+      "uptime": "執行時間",
+      "systemLoad": "系統負載",
+      "resourceHub": "資源中心",
+      "documentation": "文件",
+      "repository": "儲存庫",
+      "support": "支援"
     },
     "inbounds": {
       "totalDownUp": "總上傳 / 下載",

@@ -256,7 +256,12 @@
       "healthCritical": "{list} — حرج",
       "panel": "اللوحة",
       "threads": "الخيوط",
-      "uptime": "مدة التشغيل"
+      "uptime": "مدة التشغيل",
+      "systemLoad": "حِمل النظام",
+      "resourceHub": "مركز الموارد",
+      "documentation": "التوثيق",
+      "repository": "المستودع",
+      "support": "الدعم"
     },
     "inbounds": {
       "totalDownUp": "إجمالي المرسل/المستقبل",

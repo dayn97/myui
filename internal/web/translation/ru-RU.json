@@ -256,7 +256,12 @@
       "healthCritical": "{list} — критический уровень",
       "panel": "Панель",
       "threads": "Потоки",
-      "uptime": "Время работы"
+      "uptime": "Время работы",
+      "systemLoad": "Нагрузка системы",
+      "resourceHub": "Центр ресурсов",
+      "documentation": "Документация",
+      "repository": "Репозиторий",
+      "support": "Поддержка"
     },
     "inbounds": {
       "totalDownUp": "Отправлено/получено",

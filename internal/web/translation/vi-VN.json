@@ -256,7 +256,12 @@
       "healthCritical": "{list} — nguy cấp",
       "panel": "Panel",
       "threads": "Luồng",
-      "uptime": "Thời gian chạy"
+      "uptime": "Thời gian chạy",
+      "systemLoad": "Tải hệ thống",
+      "resourceHub": "Trung tâm tài nguyên",
+      "documentation": "Tài liệu",
+      "repository": "Kho lưu trữ",
+      "support": "Hỗ trợ"
     },
     "inbounds": {
       "totalDownUp": "Tổng tải lên/tải xuống",

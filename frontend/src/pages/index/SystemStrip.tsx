@@ -16,14 +16,20 @@ interface SystemStripProps {
   status: Status;
   showIp: boolean;
   onToggleIp: () => void;
+  compact?: boolean;
 }
 
-export default function SystemStrip({ status, showIp, onToggleIp }: SystemStripProps) {
+export default function SystemStrip({ status, showIp, onToggleIp, compact = false }: SystemStripProps) {
   const { t } = useTranslation();
 
   return (
     <Card hoverable styles={{ body: { padding: 0 } }}>
-      <div className="ov-strip-grid">
+      {compact && (
+        <div className="ov-strip-title">
+          <span className="ov-kicker">{t('pages.index.panel')}</span>
+        </div>
+      )}
+      <div className={`ov-strip-grid${compact ? ' is-compact' : ''}`}>
         <div className="ov-strip-cell">
           <div className="ov-kicker ov-kicker-icon">
             <ClockCircleOutlined />

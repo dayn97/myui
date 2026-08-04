@@ -186,91 +186,131 @@
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-/* — vitals tiles — */
+/* — hero row: trend chart + compact system load — */
 
-.ov-vitals {
+.ov-hero {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   gap: var(--ov-gap);
+  align-items: stretch;
 }
 
 @media (max-width: 1100px) {
-  .ov-vitals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ov-hero { grid-template-columns: minmax(0, 1fr); }
 }
 
-@media (max-width: 560px) {
-  .ov-vitals { grid-template-columns: minmax(0, 1fr); }
-}
-
-.ov-tile {
-  overflow: hidden;
-}
-
-.ov-tile-head {
+.ov-vitals-card {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px var(--ov-pad) 0;
-  color: var(--ov-accent);
+  flex-direction: column;
 }
 
-.ov-tile-icon {
-  display: inline-flex;
-  font-size: 15px;
+.ov-vitals-card-head {
+  padding: var(--ov-pad) var(--ov-pad) 0;
 }
 
-.ov-tile-value {
+.ov-vitals-card-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 14px var(--ov-pad) var(--ov-pad);
+}
+
+.ov-vital-row-head {
   display: flex;
   align-items: baseline;
-  gap: 4px;
-  padding: 12px var(--ov-pad) 0;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
 }
 
-.ov-tile-number {
-  font-size: 34px;
+.ov-vital-row-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  color: var(--ant-color-text);
+}
+
+.ov-vital-row-icon {
+  display: inline-flex;
+  font-size: 13px;
+}
+
+.ov-vital-row-percent {
+  font-size: 13px;
   font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.02em;
   color: var(--ant-color-text);
   font-variant-numeric: tabular-nums;
 }
 
-.ov-tile-unit {
-  font-size: 14px;
-  color: var(--ov-label);
-}
-
-.ov-tile-detail {
-  padding: 5px var(--ov-pad) 0;
-  font-size: 12px;
-  color: var(--ov-label);
-}
-
-.ov-tile-foot {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 14px var(--ov-pad) 0;
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.ov-vital-row-detail {
+  margin-top: 5px;
+  font-size: 11px;
   color: var(--ov-faint);
 }
 
-.ov-tile-chart {
-  margin-top: 6px;
-}
+/* — secondary row: connections + system info + resource hub — */
 
-/* — throughput + connections — */
-
-.ov-mid {
+.ov-secondary {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--ov-gap);
+  align-items: start;
 }
 
 @media (max-width: 1100px) {
-  .ov-mid { grid-template-columns: minmax(0, 1fr); }
+  .ov-secondary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 700px) {
+  .ov-secondary { grid-template-columns: minmax(0, 1fr); }
+}
+
+.ov-strip-title {
+  padding: var(--ov-pad) var(--ov-pad) 0;
+}
+
+.ov-hub-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.ov-hub-list {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 8px var(--ov-pad);
+  margin-top: 6px;
+}
+
+.ov-hub-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--ant-color-text);
+  transition: background 0.15s ease;
+}
+
+.ov-hub-row:hover,
+.ov-hub-row:focus-visible {
+  background: var(--ant-color-fill-tertiary);
+}
+
+.ov-hub-row-icon {
+  display: inline-flex;
+  font-size: 15px;
+  color: var(--ov-accent);
+}
+
+.ov-hub-row-label {
+  font-size: 13px;
+  flex: 1;
+}
+
+.ov-hub-row-ext {
+  font-size: 11px;
+  color: var(--ov-faint);
 }
 
 .ov-wide-head {
@@ -411,6 +451,18 @@
     border-inline-start: 1px solid var(--ov-line);
     padding-inline-start: 16px;
   }
+}
+
+/* compact variant: stacked in the secondary-row card, independent of viewport */
+.ov-strip-grid.is-compact {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  padding-top: 12px;
+}
+
+.ov-strip-grid.is-compact .ov-strip-cell + .ov-strip-cell {
+  border-inline-start: 0;
+  padding-inline-start: 0;
 }
 
 .ov-strip-value {

@@ -256,7 +256,12 @@
       "healthCritical": "{list} — بحرانی",
       "panel": "پنل",
       "threads": "نخ‌ها",
-      "uptime": "مدت کارکرد"
+      "uptime": "مدت کارکرد",
+      "systemLoad": "بار سیستم",
+      "resourceHub": "مرکز منابع",
+      "documentation": "مستندات",
+      "repository": "مخزن",
+      "support": "پشتیبانی"
     },
     "inbounds": {
       "totalDownUp": "دریافت/ارسال کل",

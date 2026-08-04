@@ -256,7 +256,12 @@
       "healthCritical": "{list} — kritik",
       "panel": "Panel",
       "threads": "İş parçacıkları",
-      "uptime": "Çalışma süresi"
+      "uptime": "Çalışma süresi",
+      "systemLoad": "Sistem Yükü",
+      "resourceHub": "Kaynak Merkezi",
+      "documentation": "Dokümantasyon",
+      "repository": "Depo",
+      "support": "Destek"
     },
     "inbounds": {
       "totalDownUp": "Toplam Gönderilen/Alınan",

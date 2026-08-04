@@ -256,7 +256,12 @@
       "healthCritical": "{list} — 危险",
       "panel": "面板",
       "threads": "线程",
-      "uptime": "运行时间"
+      "uptime": "运行时间",
+      "systemLoad": "系统负载",
+      "resourceHub": "资源中心",
+      "documentation": "文档",
+      "repository": "仓库",
+      "support": "支持"
     },
     "inbounds": {
       "totalDownUp": "总上传 / 下载",

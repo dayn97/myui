@@ -256,7 +256,12 @@
       "healthCritical": "{list} — 危険水準",
       "panel": "パネル",
       "threads": "スレッド",
-      "uptime": "稼働時間"
+      "uptime": "稼働時間",
+      "systemLoad": "システム負荷",
+      "resourceHub": "リソースハブ",
+      "documentation": "ドキュメント",
+      "repository": "リポジトリ",
+      "support": "サポート"
     },
     "inbounds": {
       "totalDownUp": "総アップロード / ダウンロード",
