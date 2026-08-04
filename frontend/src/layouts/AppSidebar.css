@@ -50,6 +50,11 @@
   line-height: 1.1;
 }
 
+.brand-text {
+  color: var(--ant-color-primary);
+  font-weight: 700;
+}
+
 .brand-actions {
   display: inline-flex;
   align-items: center;
