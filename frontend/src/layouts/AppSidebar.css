@@ -43,6 +43,16 @@
   overflow: hidden;
 }
 
+.ant-layout-sider-collapsed .sider-brand {
+  justify-content: center;
+  gap: 6px;
+  padding: 0 6px;
+}
+
+.ant-layout-sider-collapsed .brand-actions {
+  gap: 0;
+}
+
 .brand-block {
   display: inline-flex;
   align-items: center;

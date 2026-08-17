@@ -22,8 +22,8 @@ import {
   MessageOutlined,
   MoonFilled,
   MoonOutlined,
-  PushpinFilled,
-  PushpinOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
   ReadOutlined,
   SafetyOutlined,
   SettingOutlined,
@@ -44,9 +44,7 @@ import './AppSidebar.css';
 const LOGOUT_KEY = '__logout__';
 const RAIL_WIDTH = 72;
 const SIDER_WIDTH = 220;
-const SIDEBAR_PINNED_KEY = 'sidebar-pinned';
-
-let hoveredAcrossRemounts = false;
+const SIDEBAR_PINNED_KEY = 'sidebar-expanded';
 
 type IconName = 'dashboard' | 'inbound' | 'team' | 'groups' | 'setting' | 'tool' | 'cluster' | 'logout' | 'apidocs' | 'outbound' | 'routing';
 
@@ -136,7 +134,8 @@ function ThemeCycleButton({ id, isDark, isUltra, onCycle, ariaLabel }: {
 
 function readSidebarPinned() {
   try {
-    return localStorage.getItem(SIDEBAR_PINNED_KEY) === 'true';
+    const saved = localStorage.getItem(SIDEBAR_PINNED_KEY);
+    return saved === null || saved === 'true';
   } catch {
     return false;
   }
@@ -156,34 +155,20 @@ export default function AppSidebar() {
   const { allSetting } = useAllSettings();
   const showSubFormats = !!(allSetting.subJsonEnable || allSetting.subClashEnable);
 
-  const [hovered, setHovered] = useState(() => hoveredAcrossRemounts);
   const [pinned, setPinned] = useState(readSidebarPinned);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const railCollapsed = !hovered && !pinned;
+  const railCollapsed = !pinned;
   const railStyle = useMemo(
     () => ({ '--sider-rail': `${pinned ? SIDER_WIDTH : RAIL_WIDTH}px` }) as CSSProperties,
     [pinned],
   );
   const rootRef = useRef<HTMLDivElement>(null);
 
-  const updateHovered = useCallback((value: boolean) => {
-    hoveredAcrossRemounts = value;
-    setHovered(value);
-  }, []);
-
   const togglePinned = useCallback(() => {
     const next = !pinned;
     saveSidebarPinned(next);
     setPinned(next);
   }, [pinned]);
-
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      const el = rootRef.current;
-      if (el) updateHovered(el.matches(':hover'));
-    }, 150);
-    return () => window.clearTimeout(timer);
-  }, [updateHovered]);
 
   const currentTheme: 'light' | 'dark' = isDark ? 'dark' : 'light';
   const panelVersion = window.X_UI_CUR_VER || '';
@@ -286,8 +271,6 @@ export default function AppSidebar() {
       ref={rootRef}
       className={`ant-sidebar${pinned ? ' sidebar-pinned' : ''}`}
       style={railStyle}
-      onMouseEnter={() => updateHovered(true)}
-      onMouseLeave={() => updateHovered(false)}
     >
       <Layout.Sider
         theme={currentTheme}
@@ -297,31 +280,31 @@ export default function AppSidebar() {
       >
         <div className="sider-brand">
           <div className="brand-block">
-            <span className="brand-text">{railCollapsed ? 'M' : 'MYUI'}</span>
+            <span className="brand-text">{railCollapsed ? 'N' : 'NPanel'}</span>
           </div>
-          {!railCollapsed && (
-            <div className="brand-actions">
+          <div className="brand-actions">
               <button
                 type="button"
                 className="sidebar-pin"
-                aria-label={t('menu.pinSidebar')}
+                aria-label={t(pinned ? 'menu.unpinSidebar' : 'menu.pinSidebar')}
                 aria-pressed={pinned}
                 title={t(pinned ? 'menu.unpinSidebar' : 'menu.pinSidebar')}
                 onClick={togglePinned}
               >
-                {pinned ? <PushpinFilled /> : <PushpinOutlined />}
+                {pinned ? <MenuFoldOutlined /> : <MenuUnfoldOutlined />}
               </button>
-              <DocsButton ariaLabel={t('menu.docs') || 'Documentation'} />
-              <DonateButton ariaLabel={t('menu.donate') || 'Donate'} />
-              <ThemeCycleButton
-                id="theme-cycle"
-                isDark={isDark}
-                isUltra={isUltra}
-                onCycle={() => cycleTheme('theme-cycle')}
-                ariaLabel={t('menu.theme')}
-              />
+              {!railCollapsed && <>
+                <DocsButton ariaLabel={t('menu.docs') || 'Documentation'} />
+                <DonateButton ariaLabel={t('menu.donate') || 'Donate'} />
+                <ThemeCycleButton
+                  id="theme-cycle"
+                  isDark={isDark}
+                  isUltra={isUltra}
+                  onCycle={() => cycleTheme('theme-cycle')}
+                  ariaLabel={t('menu.theme')}
+                />
+              </>}
             </div>
-          )}
         </div>
         <Menu
           theme={currentTheme}
@@ -361,7 +344,7 @@ export default function AppSidebar() {
       >
         <div className="drawer-header">
           <div className="brand-block">
-            <span className="drawer-brand brand-text">MYUI</span>
+            <span className="drawer-brand brand-text">NPanel</span>
           </div>
           <div className="drawer-header-actions">
             <DocsButton ariaLabel={t('menu.docs') || 'Documentation'} />
