@@ -173,14 +173,27 @@ export default function LoginPage() {
                 <Spin size="large" />
               </div>
             ) : (
-              <div className="login-card">
-                <div className="brand">
-                  <span className="brand-name">MYUI Panel</span>
-                  <span className="brand-accent" aria-hidden="true" />
-                </div>
-                <h2 className="welcome">
-                  <b key={headlineIndex}>{headlineWords[headlineIndex]}</b>
-                </h2>
+              <div className="login-shell">
+                <section className="login-visual" aria-label="NPanel">
+                  <div className="visual-mark">N</div>
+                  <div className="visual-copy">
+                    <span className="visual-eyebrow">NPanel</span>
+                    <h1>Secure control,<br />simplified.</h1>
+                    <p>Manage your panel with clarity, speed, and confidence.</p>
+                  </div>
+                  <div className="visual-orbit visual-orbit-one" aria-hidden="true" />
+                  <div className="visual-orbit visual-orbit-two" aria-hidden="true" />
+                  <div className="visual-grid" aria-hidden="true" />
+                </section>
+
+                <section className="login-card" aria-label={t('login')}>
+                  <div className="brand">
+                    <span className="brand-name">NPanel</span>
+                    <span className="brand-accent" aria-hidden="true" />
+                  </div>
+                  <h2 className="welcome">
+                    <b key={headlineIndex}>{headlineWords[headlineIndex]}</b>
+                  </h2>
 
                 <FormProvider {...methods}>
                   <Form
@@ -242,7 +255,8 @@ export default function LoginPage() {
                       </Button>
                     </Form.Item>
                   </Form>
-                </FormProvider>
+                  </FormProvider>
+                </section>
               </div>
             )}
           </div>
