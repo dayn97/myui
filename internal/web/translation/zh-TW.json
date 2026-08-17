@@ -101,6 +101,7 @@
     "clients": "客戶端",
     "groups": "群組",
     "nodes": "節點",
+    "servers": "伺服器監控",
     "settings": "面板設定",
     "xray": "Xray 設定",
     "routing": "路由",
