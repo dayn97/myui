@@ -33,8 +33,8 @@ function clampPercent(value?: number) {
   return Math.max(0, Math.min(100, value ?? 0));
 }
 
-function formatRate(value?: number) {
-  const bytes = Math.max(0, value ?? 0);
+function formatRate(value?: unknown) {
+  const bytes = Math.max(0, typeof value === 'number' ? value : Number(value ?? 0));
   if (bytes >= 1024 ** 3) return `${(bytes / 1024 ** 3).toFixed(1)} GB/s`;
   if (bytes >= 1024 ** 2) return `${(bytes / 1024 ** 2).toFixed(1)} MB/s`;
   if (bytes >= 1024) return `${(bytes / 1024).toFixed(1)} KB/s`;
